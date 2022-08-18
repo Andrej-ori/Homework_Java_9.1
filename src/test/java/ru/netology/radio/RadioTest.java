@@ -30,7 +30,8 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadio() { // проверка значения в пределах диапазона (при выстановленом количестве радиостанций)
-        radio.setStationAmount(6);
+        Radio radio = new Radio(6);
+
         radio.setCurrentRadioStationNumber(3);
 
 
@@ -46,7 +47,8 @@ public class RadioTest {
 
     @Test
     public void souidNotSetMaxRadio() { // проверка значения больше диапазона (при выстановленом количестве радиостанций)
-        radio.setStationAmount(4);
+        Radio radio = new Radio(4);
+
         radio.setCurrentRadioStationNumber(7);
 
         Assertions.assertEquals(0, radio.getCurrentRadioStationNumber());
@@ -61,7 +63,8 @@ public class RadioTest {
 
     @Test
     public void souidNotSetMinRadio() { // проверка значения меньше диапазона (при выстановленом количестве радиостанций)
-        radio.setStationAmount(4);
+        Radio radio = new Radio(4);
+
         radio.setCurrentRadioStationNumber(-5);
 
         Assertions.assertEquals(0, radio.getCurrentRadioStationNumber());
@@ -76,7 +79,8 @@ public class RadioTest {
 
     @Test
     public void shouldSetMaxRadio() { // проверка граничных значения на верхней границе диапазона (при выстановленом количестве радиостанций)
-        radio.setStationAmount(34);
+        Radio radio = new Radio(34);
+
         radio.setCurrentRadioStationNumber(33);
 
         Assertions.assertEquals(33, radio.getCurrentRadioStationNumber());
@@ -91,7 +95,8 @@ public class RadioTest {
 
     @Test
     public void souidNotSetRadioMax() { // проверка граничных значений за верхней границей диапазона (при выстановленом количестве радиостанций)
-        radio.setStationAmount(3);
+        Radio radio = new Radio(3);
+
         radio.setCurrentRadioStationNumber(3);
 
         Assertions.assertEquals(0, radio.getCurrentRadioStationNumber());
@@ -106,7 +111,8 @@ public class RadioTest {
 
     @Test
     public void shouldSetMinRadio() { // проверка граничных значения на нижней границе диапазона (при выстановленом количестве радиостанций)
-        radio.setStationAmount(7);
+        Radio radio = new Radio(7);
+
         radio.setCurrentRadioStationNumber(0);
 
         Assertions.assertEquals(0, radio.getCurrentRadioStationNumber());
@@ -121,7 +127,8 @@ public class RadioTest {
 
     @Test
     public void  souidNotSetRadioMin() { //проверка граничных значений за нижней границей диапазона (при выстановленом количестве радиостанций)
-        radio.setStationAmount(8);
+        Radio radio = new Radio(8);
+
         radio.setCurrentRadioStationNumber(-1);
 
         Assertions.assertEquals(0, radio.getCurrentRadioStationNumber());
@@ -138,7 +145,8 @@ public class RadioTest {
 
     @Test
     public void radioNumberChangeUp() { // Проверка метода NEXT изменение раиостанции на 1 вверх (значение номера радиостанции находитсяв границах диапазона) (при выстановленом количестве радиостанций)
-        radio.setStationAmount(8);
+        Radio radio = new Radio(8);
+
         radio.setCurrentRadioStationNumber(6);
 
         radio.next();
@@ -157,7 +165,8 @@ public class RadioTest {
 
     @Test
     public void radioNumberChangeUpAbroad() { // Проверка метода NEXT при изменение раиостанции на 1 вверх (значение номера радиостанции верхняя граница диапазона) (при выстановленом количестве радиостанций)
-        radio.setStationAmount(34);
+        Radio radio = new Radio(34);
+
         radio.setCurrentRadioStationNumber(33);
 
         radio.next();
@@ -176,7 +185,8 @@ public class RadioTest {
 
     @Test
     public void radioNumberChangeDown() { // Проверка метода PREV изменение раиостанции на 1 вниз (в границах диапазона) (при количестве радиостанций по умолчанию) (при выстановленом количестве радиостанций)
-        radio.setStationAmount(7);
+        Radio radio = new Radio(7);
+
         radio.setCurrentRadioStationNumber(2);
 
         radio.prev();
@@ -195,7 +205,8 @@ public class RadioTest {
 
     @Test
     public void radioNumberChangeDownAbroad() {// Проверка метода PREV изменение раиостанции на 1 вниз за границу диапазона (при выстановленом количестве радиостанций)
-        radio.setStationAmount(15);
+        Radio radio = new Radio(15);
+
         radio.setCurrentRadioStationNumber(0);
 
         radio.prev();

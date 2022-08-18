@@ -44,19 +44,12 @@ public class Radio {
         this.soundVolume = soundVolume;
     }
 
-    public int getMinVolume() {
+   public int getMinVolume() {
         return minVolume;
-    }
-    public void setMinVolume(int minVolume) {
-        this.minVolume = minVolume;
     }
 
     public int getMaxVolume() {
         return maxVolume;
-    }
-
-    public void setMaxVolume(int minVolume) {
-        this.maxVolume = maxVolume;
     }
 
     // конструкторы
